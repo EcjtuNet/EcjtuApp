@@ -288,7 +288,8 @@ header {
   width: 100%;
   padding: 7.69608% 0;
   z-index: 100;
-  background: #c7dffc; }
+  background: #c7dffc;
+  position: fixed !important; }
 
 .height50 {
   height: 50px;
@@ -373,6 +374,24 @@ p {
   width: 19px;
   height: 13px;
   background: url("../images/sprite.png") -10px; }
+
+#change {
+  width: 100%;
+  height: 50px;
+  background: #66a7fa; }
+  #change input {
+    width: 70%;
+    padding: 0 5%;
+    height: 30px;
+    border: 15px solid #66a7fa; }
+
+#searchRoute {
+  color: #fff; }
+
+#more {
+  width: 20px;
+  height: 20px;
+  background: url("../images/sprite.png"); }
 
 /* 布局
  -------------------------------------------------------------*/
@@ -553,23 +572,3 @@ tr td {
 
   to {
     margin-top: -80%; } }
-.contentAnim {
-  -webkit-animation: indexList 0.5s linear;
-  animation: indexList 0.5s linear;
-  margin-top: 0 !important; }
-
-@-webkit-keyframes indexList {
-  from {
-    margin-top: 62.45%; }
-
-  to {
-    margin-top: 0;
-    opacity: 0; } }
-/* Standard syntax */
-@keyframes indexList {
-  from {
-    margin-top: 62.45%; }
-
-  to {
-    margin-top: 0;
-    opacity: 0; } }

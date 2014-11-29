@@ -7,17 +7,39 @@ angular.module('ngView', ['ngRoute'])
     var stuIdStart = cookie.indexOf(stuIdName) + stuIdName.length + 1;
     var stuIdEnd = cookie.indexOf(";",stuIdStart);
     $scope.id = cookie.substring(stuIdStart, stuIdEnd);
+    function h2t() {
+      //content
+        angular.element(document.querySelector('#content .wrap')).addClass('indexAnim').addClass('hide')
+        angular.element(document.querySelector('#tempView')).removeClass('hide').addClass('tempAnim')
+        angular.element(document.querySelector('#content')).addClass('mar70')
+      //header
+        angular.element(document.querySelector('#mlogo')).addClass('headerAnim')
+        angular.element(document.querySelector('header')).addClass('height50')
+        angular.element(document.querySelector('#menu')).removeClass('hide');
+      //footer
+        angular.element(document.querySelector('#change')).removeClass('hide')
+    }
+    function t2h() {
+      //content
+        angular.element(document.querySelector('#content .wrap')).removeClass('indexAnim').removeClass('hide')
+        angular.element(document.querySelector('#tempView')).addClass('hide').removeClass('tempAnim')
+        angular.element(document.querySelector('#content')).removeClass('mar70')
+      //header
+        angular.element(document.querySelector('#mlogo')).removeClass('headerAnim')
+        angular.element(document.querySelector('header')).removeClass('height50')
+        angular.element(document.querySelector('#menu')).addClass('hide');
+      //footer
+        angular.element(document.querySelector('#change')).addClass('hide')
+    }
     $scope.setRoute = function (e) {
         if (document.cookie.indexOf('uc_token') === -1) 
             window.location.href = 'http://user.ecjtu.net/login?redirect=http://www.ecjtu.net';
-        angular.element(document.querySelector('#content .wrap')).addClass('indexAnim').addClass('hide')
-        angular.element(document.querySelector('#tempView')).removeClass('hide').addClass('tempAnim')
-        angular.element(document.querySelector('header')).addClass('height50');
-        angular.element(document.querySelector('#menu')).removeClass('hide');
-        angular.element(document.querySelector('#mlogo')).addClass('headerAnim')
-        angular.element(document.querySelector('#content')).addClass('mar70')
+        h2t();
         $scope.type = e['target']['alt'];
     };
+    $scope.back = function () {
+        t2h()
+    }
  })
     //Score Search Controller
     //id: student ID
