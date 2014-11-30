@@ -114,7 +114,7 @@ angular.module('ngView', ['ngRoute'])
 .config(function($routeProvider, $locationProvider) {
   $routeProvider
    .when('/score/:id', {
-    templateUrl: '../template/score.html',
+    templateUrl: 'template/score.html',
     controller: 'ScoreController',
     resolve: {
       // I will cause a 1 second delay
@@ -126,18 +126,18 @@ angular.module('ngView', ['ngRoute'])
     }
   })
   .when('/card/:id', {
-    templateUrl: '../template/card.html',
+    templateUrl: 'template/card.html',
     controller: 'CardController'
   })
   .when('/class/:id', {
-    templateUrl: '../template/class.html',
+    templateUrl: 'template/class.html',
     controller: 'ClassController'
   })
   .when('/library/:id', {
-    templateUrl: '../template/library.html',
+    templateUrl: 'template/library.html',
     controller: 'LibraryController'
   })
 
   // configure html5 to get links working on jsfiddle
-  $locationProvider.html5Mode(true);
+  $locationProvider.html5Mode(false);
 });
