@@ -13,8 +13,8 @@ $(document).ready(function(){
                     user_info.student_id = username;
                     var storage_support = window.localStorage;
                     if (storage_support)
-                        localStorage.setItem(JSON.stringify(user_info));
-                    document.location.href('./home.html');
+                        localStorage.setItem('cache', JSON.stringify(user_info));
+                    document.location.href ='./home.html';
                 } else {
                     $('.helper').text('用户名或密码错误');
                 }

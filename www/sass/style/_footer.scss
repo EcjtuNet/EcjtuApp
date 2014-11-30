@@ -1,0 +1,101 @@
+@charset "utf-8";
+
+
+footer {
+    margin-top: (125 / $base-width) * 100%;
+    font: 15px/1.8 "Microsoft YaHei","微软雅黑",STHeiti, arial,sans-serif;
+    color: $base-blue;
+    
+    a {
+        color: $base-blue;
+        padding: 0 5px;
+    }
+}
+#tip {
+    position: absolute;
+    right: 15px;
+    top: -8px;
+    color: #a3ccff;
+}
+#gradl, #gradr {
+    display: inline-block;
+    width: 50%;
+    height: 1px;   
+}
+#gradl {
+    background: -webkit-linear-gradient(left, $base-blue-fir, $base-blue-end);
+    background: -moz-linear-gradient(left, $base-blue-fir, $base-blue-end);
+    background: -o-linear-gradient(left, $base-blue-fir, $base-blue-end);
+    background: linear-gradient(left, $base-blue-fir, $base-blue-end);
+}
+#gradr {
+    background: -webkit-linear-gradient(left, $base-blue-end, $base-blue-fir);
+    background: -moz-linear-gradient(left, $base-blue-end, $base-blue-fir);
+    background: -o-linear-gradient(left, $base-blue-end, $base-blue-fir);
+    background: linear-gradient(left, $base-blue-end, $base-blue-fir);
+}
+ 
+p {
+    text-align: center;
+}
+
+.cricon {
+    display: inline-block;
+    width: 19px;
+    height: 13px;
+    background: url($sprite-path) -10px;  
+}
+
+
+#change {
+    width: 100%;
+    height: 50px;
+    background: $base-blue;
+    line-height: 50px;
+
+    input {
+        width: 55%;
+        padding: 0 5%;
+        height: 30px;
+        border: 1px solid $base-blue;
+        font: 16px/1.0 $font-family;
+        @include radius(15px);
+        position: relative;
+        top: 0px;
+        margin-left: 2%;
+    }
+}
+#searchRoute {
+    color: $base-blue;
+    display: inline-block;
+    width: 40px;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+    text-align: center;
+    background: #ededed;
+    border: 1px solid $base-blue;
+    @include radius(5px)
+}
+#more {
+    display: inline-block;
+    text-align: center;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    margin-left: 5px;
+    border: 2px solid #fff;
+    @include radius(13px);
+
+    span {
+        display: inline-block;
+        width: 10px;
+        height: 16px;
+        background: url($sprite-path);
+        position: relative;
+        top: 2px;
+        left: 2px;
+    }
+}
