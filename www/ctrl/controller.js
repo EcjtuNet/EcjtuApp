@@ -99,6 +99,11 @@ angular.module('ngView', ['ngRoute'])
 
  .controller('CardController', function ($scope, $http, $routeParams) {
     $scope.id = $routeParams.id;
+    var time = new Date();
+    var dayArr = ['日', '一', '二', '三', '四', '五', '六'];
+    $scope.month = time.getMonth() + 1;
+    $scope.date = time.getDate();
+    $scope.day = dayArr[time.getDay()];
     var back2idx = function () {
       return document.location.href = './index.html';
     }
