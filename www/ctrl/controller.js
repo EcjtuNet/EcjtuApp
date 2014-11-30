@@ -102,8 +102,7 @@ angular.module('ngView', ['ngRoute'])
     var back2idx = function () {
       return document.location.href = './index.html';
     }
-    var tokenName = 'uc_token';
-    var token = localStorage.getItem(tokenName) || back2idx();
+    var token = localStorage.getItem('uc_token') || back2idx();
     var data = window['data'] = function (jsonpdata) {
         $scope.data = jsonpdata;
         $scope.user = jsonpdata['user'];
