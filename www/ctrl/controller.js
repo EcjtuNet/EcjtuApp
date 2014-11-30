@@ -2,10 +2,7 @@ angular.module('ngView', ['ngRoute'])
 
  .controller('MainController', function($scope) {
     $scope.type = 'score';
-    var back2idx = function () {
-      return document.location.href = './index.html';
-    };
-    $scope.id = JSON.parse(localStorage.getItem(user_info)).student_id || back2idx();
+    $scope.id = localStorage.getItem('student_id');
     function h2t() {
       //content
         angular.element(document.querySelector('#content .wrap')).addClass('indexAnim').addClass('hide')
@@ -31,8 +28,8 @@ angular.module('ngView', ['ngRoute'])
         angular.element(document.querySelector('#change')).addClass('hide')
     }
     $scope.setRoute = function (e) {
-        if (document.cookie.indexOf('uc_token') === -1) 
-            window.location.href = 'http://user.ecjtu.net/login?redirect=http://www.ecjtu.net';
+        if (!$scope.id) 
+            document.location.href = './index.html';
         h2t();
         $scope.type = e['target']['alt'];
     };
