@@ -12,14 +12,14 @@ $(document).ready(function(){
                     user_info.uc_token = data.token;
                     user_info.student_id = username;
                     var storage_support = window.localStorage;
-                    if (storage_support)
-                        localStorage.setItem(JSON.stringify(user_info));
-                    document.location.href('./home.html');
+                    if (storage_support){
+                        localStorage.setItem('uc_token', user_info.uc_token);
+                        localStorage.setItem('student_id', user_info.student_id);
+                    }
+                    document.location.href = './home.html';
                 } else {
                     $('.helper').text('用户名或密码错误');
                 }
             }, 'json');
-
-
     })
 });

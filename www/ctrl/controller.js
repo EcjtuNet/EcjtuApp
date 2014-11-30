@@ -106,7 +106,7 @@ angular.module('ngView', ['ngRoute'])
       return document.location.href = './index.html';
     }
     var tokenName = 'uc_token';
-    var token = JSON.parse(localStorage.getItem(user_info)).uc_token || back2idx();
+    var token = localStorage.getItem(tokenName) || back2idx();
     var data = window['data'] = function (jsonpdata) {
         $scope.data = jsonpdata;
         $scope.user = jsonpdata['user'];
