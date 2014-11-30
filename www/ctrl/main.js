@@ -1,6 +1,5 @@
 $(document).ready(function(){
     $('#submit').on('click', function (event) {
-        document.location.href('./home.html');
         event.preventDefault();
         var username = $('#username').val();
         var password = $('#password').val();
@@ -16,7 +15,6 @@ $(document).ready(function(){
                     if (storage_support)
                         localStorage.setItem(JSON.stringify(user_info));
                     document.location.href('./home.html');
-
                 } else {
                     $('.helper').text('用户名或密码错误');
                 }
