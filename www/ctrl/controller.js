@@ -2,11 +2,10 @@ angular.module('ngView', ['ngRoute'])
 
  .controller('MainController', function($scope) {
     $scope.type = 'score';
-    var stuIdName = 'student_id';
-    var cookie = document.cookie;
-    var stuIdStart = cookie.indexOf(stuIdName) + stuIdName.length + 1;
-    var stuIdEnd = cookie.indexOf(";",stuIdStart);
-    $scope.id = cookie.substring(stuIdStart, stuIdEnd);
+    var back2idx = function () {
+      return document.location.href = './index.html';
+    };
+    $scope.id = JSON.parse(localStorage.getItem(user_info)).student_id || back2idx();
     function h2t() {
       //content
         angular.element(document.querySelector('#content .wrap')).addClass('indexAnim').addClass('hide')
@@ -103,11 +102,11 @@ angular.module('ngView', ['ngRoute'])
 
  .controller('CardController', function ($scope, $http, $routeParams) {
     $scope.id = $routeParams.id;
+    var back2idx = function () {
+      return document.location.href = './index.html';
+    }
     var tokenName = 'uc_token';
-    var cookie = document.cookie;
-    var tokenStart = cookie.indexOf(tokenName) + tokenName.length + 1;
-    var tokenEnd = cookie.indexOf(";",tokenStart);
-    var token = cookie.substring(tokenStart, tokenEnd);
+    var token = JSON.parse(localStorage.getItem(user_info)).uc_token || back2idx();
     var data = window['data'] = function (jsonpdata) {
         $scope.data = jsonpdata;
         $scope.user = jsonpdata['user'];

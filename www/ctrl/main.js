@@ -14,7 +14,7 @@ $(document).ready(function(){
                     user_info.student_id = username;
                     var storage_support = window.localStorage;
                     if (storage_support)
-                        localStorage.setItem(user_info);
+                        localStorage.setItem(JSON.stringify(user_info));
                     document.location.href('./home.html');
 
                 } else {
